@@ -1,0 +1,16 @@
+/*
+  The CSS in this style tag is based off of Bear Blog's default CSS.
+  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
+  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
+ */
+
+/* https://www.realtimecolors.com/?colors=0c0a09-f5f5f4-f59f0a-56534e-443dff&fonts=Inter%20Tight-Inter */
+/* --text: #0c0a09;
+--background: #f5f5f4;
+--primary: #f59f0a;
+--secondary: #56534e;
+ */
+
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
