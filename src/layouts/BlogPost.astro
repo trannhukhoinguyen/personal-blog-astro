@@ -1,27 +1,46 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
 
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, date, imageURL, summary } = Astro.props;
 ---
 
-<article class="mx-auto w-max">
-  <div class="hero-image">
-    <img
-      width={1020}
-      height={510}
-      src={imageURL}
-      alt=""
-      transition:name={title}
-    />
-  </div>
+<article class="mx-auto w-full">
+  <a href="/" class="flex items-center gap-1">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide lucide-arrow-left"
+      ><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg
+    >
 
-  <div class="prose lg:prose-lg prose-a:after:content-['↗']">
-    <div class="title">
-      <h1>{title}</h1>
-      <hr />
-    </div>
+    Blogs</a
+  >
+
+  <Image
+    width={1020}
+    height={510}
+    src={imageURL}
+    alt={`${title} cover pic`}
+    transition:name={title}
+    class="my-6 aspect-video w-full rounded-md object-cover"
+    loading="eager"
+  />
+
+  <div
+    class="prose prose-lg prose-orange mx-auto w-full lg:prose-xl prose-headings:font-secondary prose-a:text-primary prose-a:after:content-['↗'] prose-img:aspect-video prose-img:w-full prose-img:rounded-md prose-img:object-cover"
+  >
+    <h1>{title}</h1>
+
     <slot />
   </div>
 </article>
