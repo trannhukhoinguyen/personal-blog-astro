@@ -12,3 +12,5 @@
 !eslint.config.mjs
 !README.md
 !tailwind.config.mjs
+!astro.config.mjs
+!drizzle.config.ts

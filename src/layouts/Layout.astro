@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
@@ -13,12 +13,18 @@ import "../styles/global.css";
     <title>Blog🤙</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-    <ViewTransitions />
+    <ClientRouter />
   </head>
 
-  <body class="grid min-h-screen grid-rows-[1fr_auto]">
+  <body
+    class="grid min-h-screen grid-rows-[1fr_auto]"
+    style="scrollbar-gutter: stable"
+  >
     <Header />
-    <main class="container mt-32 overflow-x-hidden">
+    <main
+      class="container mt-32 overflow-x-hidden"
+      style="scrollbar-gutter: stable"
+    >
       <slot />
     </main>
     <Footer />

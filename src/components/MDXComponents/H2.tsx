@@ -7,7 +7,18 @@ function generateId(text: string) {
     .replace(/(^-|-$)+/g, "");
 }
 const H2 = ({ children }: { children: React.ReactNode }) => {
-  const id = generateId(`${children?.toString()}`);
+  let textContent = "";
+
+  // If children is a React element, extract the text from its props
+  if (React.isValidElement(children)) {
+    // Check if props has value, which is likely the string you need
+    if (children.props?.value) {
+      textContent = children.props.value.toString();
+    }
+  }
+
+  const id = generateId(textContent);
+
   return (
     <h2 id={id} className="group hover:!text-text/80">
       <a href={`#${id}`} className="not-prose flex items-center gap-2">
