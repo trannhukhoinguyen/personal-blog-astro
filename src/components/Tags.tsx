@@ -8,8 +8,8 @@ const Tags = ({
   className?: string;
 }) => {
   return (
-    <div className={`not-prose flex flex-wrap w-full gap-2 ${className}`}>
-      {list.map((tag) => (
+    <div className={`not-prose flex w-full flex-wrap gap-2 ${className}`}>
+      {list.map(tag => (
         <span className="tag" key={tag}>
           # {tag}
         </span>

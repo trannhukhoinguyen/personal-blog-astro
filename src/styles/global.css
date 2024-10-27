@@ -27,9 +27,7 @@
     font-family: "Virgil";
     font-style: normal;
     font-weight: normal;
-    src:
-      url(/fonts/Virgil.woff2) format("woff2"),
-      url(/fonts/Virgil.ttf) format("truetype");
+    src: url(/fonts/Virgil.ttf) format("truetype");
     font-display: swap;
   }
 

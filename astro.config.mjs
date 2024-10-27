@@ -25,14 +25,12 @@ export default defineConfig({
     },
   },
 
-  env: {
-    schema: {
-      DB_URL: envField.string({ context: "server", access: "secret" }),
-      REDIS_URL: envField.string({ context: "server", access: "secret" }),
-      REDIS_TOKEN: envField.string({ context: "server", access: "secret" }),
+  vite: {
+    optimizeDeps: {
+      exclude: ["@resvg/resvg-js"],
     },
   },
 
-  output: "static",
+  output: "hybrid",
   adapter: vercel(),
 });
