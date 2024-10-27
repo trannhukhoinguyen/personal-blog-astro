@@ -3,6 +3,31 @@ import { ViewTransitions } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+import { SITE } from "../consts";
+
+export interface Props {
+  title?: string;
+  author?: string;
+  profile?: string;
+  description?: string;
+  ogImage?: string;
+  canonicalURL?: string;
+  pubDatetime?: Date;
+  modDatetime?: Date | null;
+  scrollSmooth?: boolean;
+}
+
+const pathname = Astro.url.pathname;
+const {
+  website,
+  author,
+  description: defaultDescription,
+  ogImage,
+  title: defaultTitle,
+} = SITE;
+const { title = defaultTitle, description = defaultDescription } = Astro.props;
+
+console.log({ pathname });
 ---
 
 <!doctype html>
@@ -10,8 +35,36 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog🤙</title>
+    <meta name="theme-color" content="#f5f5f4" />
+
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- General Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="author" content={author} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={`${website}${pathname}`} />
+    <meta
+      property="og:image"
+      content={pathname === "/" ? ogImage : `${pathname}og.png`}
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={`${website}${pathname}`} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta
+      property="twitter:image"
+      content={pathname === "/" ? ogImage : `${pathname}og.png`}
+    />
 
     <ViewTransitions />
   </head>

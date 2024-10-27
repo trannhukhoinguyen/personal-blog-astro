@@ -8,7 +8,7 @@ import { viewCount } from "../../../db/schema";
 import { Ratelimit } from "@upstash/ratelimit";
 import { redis } from "../../../db/upstash";
 
-export const GET: APIRoute = async ({ params, request }) => {
+export const GET: APIRoute = async ({ request }) => {
   const { searchParams } = new URL(request.url);
   const blogSlug = searchParams.get("slug") ?? "";
   const list = await getCollection("blog");

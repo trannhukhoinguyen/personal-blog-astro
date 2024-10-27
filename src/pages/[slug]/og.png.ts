@@ -12,19 +12,9 @@ export async function getStaticPaths() {
 }
 
 export const GET: APIRoute = async ({ props }) => {
-  try {
-    const image = await generateOgImageForPost(
-      props as CollectionEntry<"blog">
-    );
+  const image = await generateOgImageForPost(props as CollectionEntry<"blog">);
 
-    return new Response(image, {
-      headers: { "Content-Type": "image/png" },
-    });
-  } catch (error) {
-    console.log({ error });
-
-    return new Response(
-      JSON.stringify({ message: "Failed to generate OG image" })
-    );
-  }
+  return new Response(image, {
+    headers: { "Content-Type": "image/png" },
+  });
 };
