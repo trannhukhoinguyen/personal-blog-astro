@@ -18,7 +18,7 @@ export default {
         background: "hsl(var(--background))",
       },
       fontFamily: {
-        sans: ["Geist", "sans-serif"], // Fallback to sans-serif
+        sans: ["Geist"], // Fallback to sans-serif
         mono: ["GeistMono", "monospace"], // Fallback to monospace
         secondary: ["Virgil", "sans-serif"], // Virgil font with sans-serif fallback
       },

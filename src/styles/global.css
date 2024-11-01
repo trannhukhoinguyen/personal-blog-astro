@@ -26,10 +26,6 @@
   html {
     @apply scroll-m-20 overflow-auto scroll-smooth bg-background text-text selection:bg-primary selection:text-background;
   }
-
-  body {
-    @apply font-sans;
-  }
 }
 
 @layer utilities {
