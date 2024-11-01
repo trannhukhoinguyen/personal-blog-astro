@@ -20,8 +20,8 @@ export default {
         background: "hsl(var(--background))",
       },
       fontFamily: {
-        sans: ["Geist", ...defaultTheme.fontFamily.sans],
-        mono: ["GeistMono", ...defaultTheme.fontFamily.mono],
+        sans: ["Geist"],
+        mono: ["GeistMono"],
         secondary: ["Virgil", "sans-serif"],
       },
     },

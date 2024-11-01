@@ -5,6 +5,7 @@ import { format } from "date-fns";
 import Tags from "../components/Tags";
 import readingTime from "reading-time";
 import Views from "../components/Views";
+import path from "path";
 
 type Props = CollectionEntry<"blog">["data"] & {
   content: string;
@@ -14,6 +15,7 @@ type Props = CollectionEntry<"blog">["data"] & {
 const { title, date, imageURL, tags, content, slug } = Astro.props;
 
 const time = readingTime(content);
+const extension = path.extname(imageURL);
 ---
 
 <article
@@ -42,15 +44,30 @@ const time = readingTime(content);
     Back</a
   >
 
-  <Image
-    width={1020}
-    height={510}
-    src={imageURL}
-    alt={`${title} cover pic`}
-    transition:name={title}
-    class="aspect-video w-full rounded-md object-cover"
-    loading="eager"
-  />
+  {
+    extension.includes("webm") ? (
+      <video
+        src={imageURL}
+        width={1020}
+        autoplay
+        loop
+        muted
+        height={510}
+        class="aspect-video w-full rounded-md object-cover"
+        transition:name={title}
+      />
+    ) : (
+      <Image
+        width={1020}
+        height={510}
+        src={imageURL}
+        alt={`${title} cover pic`}
+        transition:name={title}
+        class="aspect-video w-full rounded-md object-cover"
+        loading="eager"
+      />
+    )
+  }
 
   <h1>{title}</h1>
 

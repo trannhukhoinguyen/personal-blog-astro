@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import { format } from "date-fns";
 import Tags from "../components/Tags";
+import path from "path";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
@@ -14,23 +15,38 @@ const posts = (await getCollection("blog")).sort(
   <section>
     <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {
-        posts.map(post => {
+        posts.map((post, index) => {
           const { title, date, imageURL, summary, tags } = post.data;
+          const extension = path.extname(imageURL);
+
           return (
             <li>
               <a
                 href={`/${post.slug}/`}
                 class="relative inline-block aspect-video w-full overflow-hidden rounded-md"
               >
-                <Image
-                  width={720}
-                  height={360}
-                  transition:name={title}
-                  loading="eager"
-                  src={imageURL}
-                  alt={`${title} cover pic`}
-                  class="absolute h-full w-full object-cover transition-transform hover:scale-110"
-                />
+                {extension.includes("webm") ? (
+                  <video
+                    src={imageURL}
+                    width={720}
+                    height={360}
+                    autoplay
+                    loop
+                    muted
+                    class="absolute h-full w-full object-cover transition-transform hover:scale-110"
+                    transition:name={title}
+                  />
+                ) : (
+                  <Image
+                    width={720}
+                    height={360}
+                    transition:name={title}
+                    loading={index <= 5 ? "eager" : "lazy"}
+                    src={imageURL}
+                    alt={`${title} cover pic`}
+                    class="absolute h-full w-full object-cover transition-transform hover:scale-110"
+                  />
+                )}
               </a>
 
               <div class="my-2 flex items-center justify-between">

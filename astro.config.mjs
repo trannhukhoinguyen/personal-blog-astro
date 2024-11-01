@@ -19,7 +19,7 @@ export default defineConfig({
     shikiConfig: {
       themes: {
         light: "dracula",
-        dark: "everforest-light",
+        dark: "dracula",
       },
       transformers: [transformerNotationHighlight()],
     },
