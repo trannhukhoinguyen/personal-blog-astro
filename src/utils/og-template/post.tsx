@@ -6,10 +6,10 @@ import fs from "fs";
 export default async (post: CollectionEntry<"blog">) => {
   // Read the fonts from the local filesystem instead of fetching
   const virgilFontPath = path.resolve("./public/fonts/Virgil.ttf");
-  const geistFontPath = path.resolve("./public/fonts/Geist-Regular.otf");
+  const gambettaFontPath = path.resolve("./public/fonts/Gambetta-Regular.ttf");
 
   const virgilFontBuffer = fs.readFileSync(virgilFontPath);
-  const geistFontBuffer = fs.readFileSync(geistFontPath);
+  const geistFontBuffer = fs.readFileSync(gambettaFontPath);
 
   const svg = await satori(
     <div
