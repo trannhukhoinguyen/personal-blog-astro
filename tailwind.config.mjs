@@ -1,5 +1,3 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -20,9 +18,9 @@ export default {
         background: "hsl(var(--background))",
       },
       fontFamily: {
-        sans: ["Geist"],
-        mono: ["GeistMono"],
-        secondary: ["Virgil", "sans-serif"],
+        sans: ["Geist", "sans-serif"], // Fallback to sans-serif
+        mono: ["GeistMono", "monospace"], // Fallback to monospace
+        secondary: ["Virgil", "sans-serif"], // Virgil font with sans-serif fallback
       },
     },
   },

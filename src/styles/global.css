@@ -23,30 +23,6 @@
     --text: 20 14 4;
   }
 
-  @font-face {
-    font-family: "Virgil";
-    font-style: normal;
-    font-weight: normal;
-    src: url(/fonts/Virgil.ttf) format("truetype");
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: "Geist";
-    font-style: normal;
-    font-weight: 400;
-    src: url(/fonts/Geist-Regular.otf) format("otf");
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: "GeistMono";
-    font-style: normal;
-    font-weight: 400;
-    src: url(/fonts/GeistMono-Regular.woff2) format("woff2");
-    font-display: swap;
-  }
-
   html {
     @apply scroll-m-20 overflow-auto scroll-smooth bg-background text-text selection:bg-primary selection:text-background;
   }
@@ -60,6 +36,30 @@
   .tag {
     @apply rounded-md bg-primary/15 px-2 py-1 text-sm text-primary;
   }
+}
+
+@font-face {
+  font-family: "Virgil";
+  font-style: normal;
+  font-weight: normal;
+  src: url(/fonts/Virgil.ttf) format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-weight: 400;
+  src: url(/fonts/Geist-Regular.otf) format("otf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GeistMono";
+  font-style: normal;
+  font-weight: 400;
+  src: url(/fonts/GeistMono-Regular.woff2) format("woff2");
+  font-display: swap;
 }
 
 .dot {
