@@ -26,6 +26,10 @@
   html {
     @apply scroll-m-20 overflow-auto scroll-smooth bg-background text-text selection:bg-primary selection:text-background;
   }
+
+  body {
+    @apply font-serif;
+  }
 }
 
 @layer utilities {
@@ -43,10 +47,18 @@
 }
 
 @font-face {
-  font-family: "Geist";
+  font-family: "Gambetta";
   font-style: normal;
   font-weight: 400;
-  src: url(/fonts/Geist-Regular.otf) format("otf");
+  src: url(/fonts/Gambetta-Regular.ttf) format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gambetta";
+  font-style: normal;
+  font-weight: 600;
+  src: url(/fonts/Gambetta-Semibold.ttf) format("truetype"); /* Adjust the path and filename as needed */
   font-display: swap;
 }
 
