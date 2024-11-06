@@ -26,6 +26,8 @@ const {
 } = SITE;
 
 const { title = defaultTitle, description = defaultDescription } = Astro.props;
+
+const ogImageBasedOnPath = pathname === "/" ? ogImage : `${pathname}og.png`;
 ---
 
 <!doctype html>
@@ -35,7 +37,7 @@ const { title = defaultTitle, description = defaultDescription } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f5f5f4" />
 
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="200x200" />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <!-- General Meta Tags -->
@@ -48,21 +50,20 @@ const { title = defaultTitle, description = defaultDescription } = Astro.props;
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={`${website}${pathname}`} />
-    <meta
-      property="og:image"
-      content={pathname === "/" ? ogImage : `${pathname}og.png`}
-    />
+    <meta property="og:url" content={`${website}/`} />
+    <meta property="og:image" content={ogImageBasedOnPath} />
+    <meta property="og:image:height" content="600" />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={`${website}${pathname}`} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta
-      property="twitter:image"
-      content={pathname === "/" ? ogImage : `${pathname}og.png`}
-    />
+    <meta property="twitter:image" content={ogImageBasedOnPath} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image:width" content="800" />
+    <meta name="twitter:image:height" content="600" />
 
     <ViewTransitions />
   </head>
@@ -73,7 +74,7 @@ const { title = defaultTitle, description = defaultDescription } = Astro.props;
   >
     <Header />
     <main
-      class="container mt-24 overflow-x-hidden"
+      class="container mt-24 overflow-hidden pb-4"
       style="scrollbar-gutter: stable"
     >
       <slot />
