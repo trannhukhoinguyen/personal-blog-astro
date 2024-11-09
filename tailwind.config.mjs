@@ -20,6 +20,7 @@ export default {
       fontFamily: {
         serif: ["Gambetta", "serif"],
         secondary: ["Virgil", "sans-serif"], // Virgil font with sans-serif fallback
+        mono: ["GeistMono"],
       },
     },
   },

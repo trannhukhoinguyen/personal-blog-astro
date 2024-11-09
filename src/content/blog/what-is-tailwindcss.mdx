@@ -1,0 +1,85 @@
+---
+title: What is TailwindCSS
+date: 2024-11-09
+summary: Another way of writing CSS
+imageURL: /blog/what-is-tailwindcss/cover-pic.webp
+tags:
+  - Books
+---
+
+import H2 from "../../components/MDXComponents/H2";
+import { Image } from "astro:assets";
+
+Hey there 👋! In this blog i'll explain what is tailwindcss, advantages of using it over CSS. TailwindCSS is a way of writing CSS, which is used in styling websites. Even my website is styled using tailwind!
+
+<H2>Cons of CSS</H2>
+
+- Repeating same properties again & again. In my previous company we've used `CSS` & `SASS` for styling. We've declared some common classes. Still we ended up create new classes which've same properties!
+- Coming-up with different class names for styles to not overlap
+- Increased bundle size because of repeating the same properties again & again!
+
+<H2>Pros of TailwindCSS</H2>
+
+- It' a combination of utility classes, the CSS properties are tailwind classes example👇
+
+```html
+<!-- Here i've 2 div's styled with CSS & TailwindCSS -->
+
+<!-- This is Traditional CSS -->
+<style>
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+
+<div class="container"></div>
+
+<!-- This is Tailwind classes -->
+<div class="flex items-center justify-center"></div>
+```
+
+- Comes with Intellisence, auto-suggestion of classes🔥. Install this [plugin](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+- No need to come-up with weird class names😮‍💨
+- Comes with a good Design System out of the box📦.
+- Debugging will be easy because your styles & html lives at same place
+
+<H2>TailwindCSS Plugins🔌</H2>
+
+Tailwind plugins add super-powers to your App, these will extend your `tailwind.conifg` file, here are few plugins that i've used👇
+
+**@tailwindcss/typography 😘**
+
+- Used for styling the typography content, this page is styled using this plugin [learn more](https://github.com/tailwindlabs/tailwindcss-typography)
+- This plugin is the most used plugin for styling blog content pages!
+
+**tailwindcss-animate**
+
+- This plugin adds animation utility classes [learn more](https://github.com/jamiebuilds/tailwindcss-animate)
+
+<H2>Learning path🛤️</H2>
+
+<Image
+  src="/blog/what-is-tailwindcss/learning-path.webp"
+  alt="Learning path"
+  height={500}
+  width={500}
+/>
+
+- When it comes to learning TailwindCSS, my suggestion is get good at CSS first
+- Finally during build time, Tailwind classes which you've will be converted into CSS
+- If you understand CSS, then tailwind is just mappig of CSS properties to classes
+
+<H2>What's next🤔</H2>
+
+- Once you've learned tailwind, there are 2 ways choosing Component library
+- Either you need to choose the library where you can use tailwind example👇
+  - [Shadcn](https://ui.shadcn.com/docs/components/accordion)
+  - [Radix UI](https://www.radix-ui.com/primitives/docs/components/accordion)
+- Or you need to stick library using css example👇
+  - [Material UI](https://mui.com/)
+  - [Ant Design](https://ant.design/components/button)
+- Don't try to mix a CSS component library with tailwind, it'll be a mess😵‍💫
+
+And that's it for this blog, thanks for reading this far, stay tuned for more updates peace✌️

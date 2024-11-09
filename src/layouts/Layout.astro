@@ -51,7 +51,7 @@ const ogImageBasedOnPath = pathname === "/" ? ogImage : `${pathname}og.png`;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={`${website}/`} />
-    <meta property="og:image" content={ogImageBasedOnPath} />
+    <meta property="og:image" content={website + ogImageBasedOnPath} />
     <meta property="og:image:height" content="600" />
     <meta property="og:image:width" content="800" />
     <meta property="og:locale" content="en_US" />
@@ -60,7 +60,7 @@ const ogImageBasedOnPath = pathname === "/" ? ogImage : `${pathname}og.png`;
     <!-- Twitter -->
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={ogImageBasedOnPath} />
+    <meta property="twitter:image" content={website + ogImageBasedOnPath} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image:width" content="800" />
     <meta name="twitter:image:height" content="600" />
