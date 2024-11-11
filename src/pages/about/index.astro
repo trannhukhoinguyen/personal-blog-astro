@@ -4,8 +4,8 @@ import Image from "astro/components/Image.astro";
 ---
 
 <Layout title="About">
-  <section>
-    <div class="mx-auto max-w-4xl md:flex md:gap-4">
+  <section class="mx-auto max-w-4xl">
+    <div class="md:flex md:gap-4">
       <Image
         height={500}
         width={500}
@@ -40,7 +40,7 @@ import Image from "astro/components/Image.astro";
         </p>
 
         <p class="mt-6">Elsewhere</p>
-        <div class="flex flex-wrap gap-x-6">
+        <div class="mb-6 flex flex-wrap gap-x-6">
           <a href="https://pavanbhaskar.com" target="_blank">Website</a>
 
           <a
@@ -72,6 +72,15 @@ import Image from "astro/components/Image.astro";
             Instagram
           </a>
         </div>
+
+        <a
+          href="https://www.buymeacoffee.com/pavanbhaskar"
+          class="after:!content-none"
+          target="_blank"
+          ><img
+            src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=pavanbhaskar&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff"
+          /></a
+        >
       </div>
     </div>
   </section>
