@@ -18,7 +18,7 @@ export default {
         background: "hsl(var(--background))",
       },
       fontFamily: {
-        serif: ["Gambetta", "serif"],
+        primary: ["Work Sans", "sans-serif"],
         secondary: ["Virgil", "sans-serif"], // Virgil font with sans-serif fallback
         mono: ["GeistMono"],
       },

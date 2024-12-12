@@ -28,7 +28,7 @@
   }
 
   body {
-    @apply font-serif;
+    @apply font-primary;
   }
 }
 
@@ -43,22 +43,6 @@
   font-style: normal;
   font-weight: normal;
   src: url(/fonts/Virgil.ttf) format("truetype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Gambetta";
-  font-style: normal;
-  font-weight: 400;
-  src: url(/fonts/Gambetta-Regular.ttf) format("truetype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Gambetta";
-  font-style: normal;
-  font-weight: 600;
-  src: url(/fonts/Gambetta-Semibold.ttf) format("truetype"); /* Adjust the path and filename as needed */
   font-display: swap;
 }
 
