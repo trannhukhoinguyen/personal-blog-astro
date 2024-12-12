@@ -6,10 +6,8 @@ import fs from "fs";
 export default async (post: CollectionEntry<"blog">) => {
   // Read the fonts from the local filesystem instead of fetching
   const virgilFontPath = path.resolve("./public/fonts/Virgil.ttf");
-  const gambettaFontPath = path.resolve("./public/fonts/Gambetta-Regular.ttf");
 
   const virgilFontBuffer = fs.readFileSync(virgilFontPath);
-  const geistFontBuffer = fs.readFileSync(gambettaFontPath);
 
   const svg = await satori(
     <div
@@ -76,7 +74,7 @@ export default async (post: CollectionEntry<"blog">) => {
             style={{
               display: "flex",
               justifyContent: "space-between",
-              fontFamily: "Geist",
+              fontFamily: "Virgil",
               width: "100%",
               marginBottom: "8px",
               fontSize: 28,
@@ -107,11 +105,6 @@ export default async (post: CollectionEntry<"blog">) => {
         {
           name: "Virgil",
           data: virgilFontBuffer,
-          style: "normal",
-        },
-        {
-          name: "Geist",
-          data: geistFontBuffer,
           style: "normal",
         },
       ],
