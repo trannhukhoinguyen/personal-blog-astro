@@ -45,7 +45,7 @@ const Message = ({
         loading="lazy"
       />
 
-      <div className="overflow-scroll">
+      <div className="overflow-hidden">
         <p
           data-direction={direction}
           className="not-prose m-0 text-sm text-gray-500 data-[direction=right]:text-right"
