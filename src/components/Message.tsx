@@ -2,7 +2,7 @@ import React from "react";
 
 type MessageType = {
   children: React.ReactNode;
-  character?: "pavan" | "chimtu";
+  character?: "pavan" | "chimtu" | "chitti";
   direction?: "left" | "right";
 };
 
@@ -22,6 +22,10 @@ const characterDetails: CharacterDetailsType = {
     imageURL: "/characters/chimtu.webp",
     name: "Chimtu",
   },
+  chitti: {
+    imageURL: "/characters/chitti.webp",
+    name: "Chitti",
+  },
 };
 
 const Message = ({
@@ -37,11 +41,11 @@ const Message = ({
       className="mt-10 flex w-full gap-2 data-[direction=right]:flex-row-reverse"
     >
       <img
-        className="not-prose size-10 flex-shrink-0 rounded-full bg-slate-300 object-cover"
+        className="not-prose size-12 flex-shrink-0 rounded-full bg-slate-300 object-cover"
         src={imageURL}
         alt={`${name} profile-pic`}
-        height={40}
-        width={40}
+        height={50}
+        width={50}
         loading="lazy"
       />
 
